@@ -12,23 +12,58 @@ Dalam proses instalasi dan konfigurasi MySQL, beberapa permasalahan yang sering 
 - Hak akses yang terlalu luas untuk pengguna tertentu bisa menyebabkan kebocoran atau kerusakan data.
 
 ## 3. Solusi atau Skenario Aktivitas
-Berikut adalah langkah-langkah Instalasi dan Konfigurasi MySQL :
-### A. Instalasi MySQL
-  1. Unduh MySQL dari situs resmi MySQL.
-  2. Jalankan MySQL Installer dan pilih opsi "Server Only" untuk menginstal hanya server database.
-  3. Pilih versi MySQL yang sesuai, lalu klik Next.
-  4. Mulai proses instalasi dengan mengklik Execute.
-  5. Setelah instalasi selesai, klik Next dan lanjutkan ke konfigurasi.
-### B. Konfigurasi MySQL
-  1. Mengubah Port Default
-     - Cari file my.ini menggunakan %PROGRAMDATA%.
-     - Buka file my.ini dan ubah nilai port dari 3306 ke 3309.
-     - Stop MySQL sebelum menyimpan perubahan.
-  3. Mengatur Password Root
-     - et
-  5. Menyesuaikan innodb_buffer_pool_size
-  6. Membuat Database
+Berikut langkah-langkah untuk menginstal dan mengonfigurasi MySQL secara optimal:
 
+### A. Instalasi MySQL
+1. Buka browser dan cari "Download MySQL".
+2. Pilih "MySQL Community (GPL) Downloads".
+3. Unduh "MySQL Installer for Windows".
+4. Pilih opsi **Server Only** dan klik **Next**.
+5. Klik **Execute** untuk memulai instalasi.
+6. Setelah instalasi selesai, lanjutkan dengan konfigurasi awal.
+
+### B. Mengubah Port MySQL dari 3306 ke 3309
+1. Masuk ke MySQL menggunakan **Command Prompt**.
+2. Cek port saat ini dengan perintah:
+   ```sql
+   SHOW VARIABLES LIKE 'port';
+   ```
+3. Cari file `my.ini` menggunakan `%PROGRAMDATA%`.
+4. Buka file `my.ini` dan ubah nilai `port` dari `3306` ke `3309`.
+5. Stop MySQL sebelum menyimpan perubahan.
+6. Restart MySQL dan cek kembali port dengan perintah yang sama.
+
+### C. Mengubah `innodb_buffer_pool_size`
+1. Buka file `my.ini`.
+2. Cari parameter `innodb_buffer_pool_size`.
+3. Ubah dari `16M` menjadi **25% dari total RAM** yang tersedia.
+4. Restart MySQL untuk menerapkan perubahan.
+5. Cek perubahan dengan perintah:
+   ```sql
+   SHOW VARIABLES LIKE 'innodb_buffer_pool_size';
+   ```
+   
+### D. Mengubah Password Root MySQL
+1. Masuk ke MySQL sebagai root dengan:
+   ```sh
+   mysql -u root -p
+   ```
+2. Ubah password dengan perintah:
+   ```sql
+   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password_baru';
+   ```
+3. Verifikasi perubahan dengan login ulang.
+
+### E. Membuat Database Baru
+1. Buat database dengan format `kelompok_nama_mhs`:
+   ```sql
+   CREATE DATABASE kelompok_09_elsa;
+   ```
+2. Cek apakah database berhasil dibuat:
+   ```sql
+   SHOW DATABASES;
+   ```
+   
 ## 4. Pembahasan
 Pembahasan ini mencakup langkah-langkah instalasi dan konfigurasi MySQL untuk memastikan sistem database berfungsi dengan optimal. Proses instalasi dimulai dengan mengunduh MySQL. Selain itu, pengelolaan database, mengecek konfigurasi MySQL, dan memastikan parameter yang diatur sudah berjalan sesuai kebutuhan sistem.
 
