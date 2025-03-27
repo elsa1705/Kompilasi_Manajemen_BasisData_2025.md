@@ -1,0 +1,1 @@
+# Optimasi Bottleneck dalam MySQL
