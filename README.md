@@ -1,1 +1,0 @@
-# instalasi-dan-konfigurasi-mysql.md
