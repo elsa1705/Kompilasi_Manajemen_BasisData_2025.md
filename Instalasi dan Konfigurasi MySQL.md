@@ -25,6 +25,7 @@ Berikut adalah langkah-langkah Instalasi dan Konfigurasi MySQL :
      - Buka file my.ini dan ubah nilai port dari 3306 ke 3309.
      - Stop MySQL sebelum menyimpan perubahan.
   3. Mengatur Password Root
+     - et
   5. Menyesuaikan innodb_buffer_pool_size
   6. Membuat Database
 
