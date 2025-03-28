@@ -5,23 +5,73 @@
 ## 3. Solusi atau Skenario Aktivitas
 1. Redesaian tabel tr_penjualan, menambahkan partisi pada tabel tersebut. Sehingga ada tabel baru tr_penjualan_partisi
 ```sql
-CREATE TABLE tr_penjualan_partisi ( tgl_transaksi DATETIME DEFAULT NULL, kode_cabang VARCHAR(10) DEFAULT NULL, kode_kasir VARCHAR(10) DEFAULT NULL, kode_item VARCHAR(7) DEFAULT NULL,
-kode_produk VARCHAR(12) DEFAULT NULL, jumlah_pembelian INT(11) DEFAULT NULL, nama_kasir VARCHAR(40) DEFAULT NULL, harga INT(6) DEFAULT NULL
+CREATE TABLE tr_penjualan_partisi (
+tgl_transaksi DATETIME
+DEFAULT NULL, kode_cabang VARCHAR(10)
+DEFAULT NULL, kode_kasir VARCHAR(10)
+DEFAULT NULL, kode_item VARCHAR(7)
+DEFAULT NULL,kode_produk VARCHAR(12)
+DEFAULT NULL, jumlah_pembelian INT(11)
+DEFAULT NULL, nama_kasir VARCHAR(40)
+DEFAULT NULL, harga INT(6) DEFAULT NULL
 )
- PARTITION BY RANGE (YEAR(tgl_transaksi)) ( PARTITION p0 VALUES LESS THAN (2008), PARTITION p1 VALUES LESS THAN (2009), PARTITION p2 VALUES LESS THAN (2010), PARTITION p3 VALUES LESS THAN (2011), PARTITION p4 VALUES LESS THAN (2012), PARTITION p5 VALUES LESS THAN (2013), PARTITION p6 VALUES LESS THAN (2014), PARTITION p7 VALUES LESS THAN (2015)
+ PARTITION BY RANGE
+(YEAR(tgl_transaksi)) (
+PARTITION p0 VALUES LESS THAN (2008),
+PARTITION p1 VALUES LESS THAN (2009),
+PARTITION p2 VALUES LESS THAN (2010),
+PARTITION p3 VALUES LESS THAN (2011),
+PARTITION p4 VALUES LESS THAN (2012),
+PARTITION p5 VALUES LESS THAN (2013),
+PARTITION p6 VALUES LESS THAN (2014),
+PARTITION p7 VALUES LESS THAN (2015)
 );
 ```
-3. Mengisikan tabel tr_penjualan_partisi.
+2. Mengisikan tabel tr_penjualan_partisi.
+```sql
+--2008--
+INSERT INTO tr_penjualan_partisi (tgl_transaksi, kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga)
+SELECT tgl_transaksi, kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga_produk AS harga
+FROM tr_penjualan
+WHERE YEAR(tgl_transaksi) = 2008;
 
-4. Mengisikan tabel tr_penjualan_partisi dengan kapasitas laptop
+--2009--
+INSERT INTO tr_penjualan_partisi (tgl_transaksi,
+kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga)
+SELECT DATE_ADD(tgl_transaksi, INTERVAL 1 YEAR), kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga_produk as harga FROM tr_penjualan
+  WHERE YEAR(tgl_transaksi) = 2008;
 
-5. Susunan record sesuai partisi akan ditampilkan
+--2010--
+INSERT INTO tr_penjualan_partisi (tgl_transaksi, kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga)
+SELECT DATE_ADD(tgl_transaksi, INTERVAL 2 YEAR), kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga_produk as harga FROM tr_penjualan
+WHERE YEAR(tgl_transaksi) = 2008;
 
-6. Buat tabel tr_penjualan_raw yang isinya sama persis dengan tabel tr_penjualan_partisi
+--2011--
+INSERT INTO tr_penjualan_partisi (tgl_transaksi, kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga)
+SELECT DATE_ADD(tgl_transaksi, INTERVAL 3 YEAR), kode_cabang, kode_kasir, kode_item, kode_produk, jumlah_pembelian, nama_kasir, harga_produk as harga FROM tr_penjualan
+ WHERE YEAR(tgl_transaksi) = 2008;
+```
+3. Mengisikan tabel tr_penjualan_partisi dengan kapasitas laptop
+```sql
+SELECT TABLE_NAME, PARTITION_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.PARTITIONS
+ WHERE TABLE_NAME = 'tr_penjualan_partisi';
+```
+4. Susunan record sesuai partisi akan ditampilkan
+```sql
 
-7. Pengujian kolom lain pada tabel non partisi
+```
+5. Buat tabel tr_penjualan_raw yang isinya sama persis dengan tabel tr_penjualan_partisi
+```sql
 
-8. Pengujian kolom lain pada tabel partisi
+```
+6. Pengujian kolom lain pada tabel non partisi
+```sql
+
+```
+7. Pengujian kolom lain pada tabel partisi
+```sql
+
+```
 ## 4. Pembahasan
 ## 5. Kesimpulan
 Berdasarkan hasil percobaan, waktu eksekusi query pada tabel partisi dengan tgl_transaksi menunjukkan rata-rata yang lebih rendah dibandingkan tabel tanpa partisi. Pada tabel tanpa partisi, rata-rata waktu eksekusi berkisar antara 15.122 hingga 17.193 ms, sedangkan pada tabel partisi, rata-rata waktu eksekusi lebih stabil dalam rentang 13.847 hingga 14.992 ms. Hal ini membuktikan bahwa partisi tabel mampu meningkatkan efisiensi pencarian data, terutama saat query dilakukan berdasarkan kolom yang digunakan sebagai dasar partisi. Dengan demikian, penggunaan partisi sangat efektif dalam mempercepat akses data pada skenario tertentu, terutama yang melibatkan pencarian berbasis rentang waktu.
