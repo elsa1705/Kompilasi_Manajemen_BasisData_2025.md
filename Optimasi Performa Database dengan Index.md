@@ -122,19 +122,14 @@ Penggunaan indeks pada database sangat berpengaruh terhadap kinerja query, terut
 
 ## 6. Bukti Dukung Gambar
 1.	Menambahkan kolom nama departemen pada table dept_manager. Dan melakukan update terhadap kolom tersebut.
-   
    ![1](https://github.com/user-attachments/assets/c1415afa-69ea-498d-94e2-64eff2140693)
 2.	Menambahkan kolom nama departemen pada table dept_emp. Dan melakukan update terhadap kolom tersebut.
-
    ![2](https://github.com/user-attachments/assets/fb2e519a-fff4-44f9-a526-31cdb80e6854)
 3.	Menampilkan gaji yang tertinggi pada departemen d006.
-
    ![3](https://github.com/user-attachments/assets/3fa9d4ef-276e-4df3-a6a6-b27ef99422e4)
 4.	Menambahkan kolom umur pada table employee. Kemudian melakukan update terhadap kolom umur tersbut.
-
    ![4](https://github.com/user-attachments/assets/87722b0c-00f4-4c1e-b9af-4e2f3a8b6c3b)
-5.	Pengujian 'EXPLAIN SELECT * FROM employee WHERE first_name = 'Georgi';' untuk mengecek apakah sudah mengakses index atau belum.
-
+5.	Pengujian **EXPLAIN SELECT * FROM employee WHERE first_name = 'Georgi';** untuk mengecek apakah sudah mengakses index atau belum.
    ![5](https://github.com/user-attachments/assets/1e49c409-38d1-4ed1-a2f2-6c06ad867c60)
 
    
