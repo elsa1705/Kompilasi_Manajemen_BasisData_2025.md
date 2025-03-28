@@ -135,4 +135,4 @@ Penggunaan indeks pada database sangat berpengaruh terhadap kinerja query, terut
    
 ## 7. Sumber Referensi
 - [MySQL Documentation](https://dev.mysql.com/doc/)
-- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1PMlqZAO8x-HlT8XKu6N3QbCgqesdyzJf/view?usp=sharing)
+- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1D8_WiK6RcVyhe-KFeYc2ovE3bDSbLsRp/view?usp=drive_link)
