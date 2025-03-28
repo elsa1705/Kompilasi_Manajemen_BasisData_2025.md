@@ -146,4 +146,4 @@ Berdasarkan hasil percobaan, waktu eksekusi query pada tabel partisi dengan tgl_
 
 ## 7. Sumber Referensi
 - [Dokumentasi MySQL Partisi Tabel](https://dev.mysql.com/doc/refman/8.0/en/partitioning.html)  
-- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1owdQasYnWgnII95wxeOau5ixu9UYlGoS/view?usp=sharing)
+- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1KLjyEyMzXmIwDnrx2Mumf6QYIZumgwXz/view?usp=drive_link)
