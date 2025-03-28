@@ -217,4 +217,4 @@ Dari hasil optimasi, dapat disimpulkan bahwa bottleneck dalam MySQL dapat diatas
 
 ## 6. Sumber Referensi
 - [Dokumentasi MySQL Partisi Tabel](https://dev.mysql.com/doc/refman/8.0/en/partitioning.html)  
-- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1owdQasYnWgnII95wxeOau5ixu9UYlGoS/view?usp=sharing)
+- [Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1sw-YAvemvrxCqdatqtQBfU05QIrAQHhS/view?usp=drive_link)
