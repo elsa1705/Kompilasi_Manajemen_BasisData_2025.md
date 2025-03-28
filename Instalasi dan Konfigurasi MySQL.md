@@ -84,9 +84,11 @@ Konfigurasi
 1)	port dari default 3306 menjadi 3309
    
    ![1](https://github.com/user-attachments/assets/0e14f3dc-6278-4364-a231-db5118317f76)
+
 2)	innodb_buffer_pool_size dr default 16M (menjadi 25% dari RAM )
 
    ![image](https://github.com/user-attachments/assets/145598d3-430e-4d8b-9968-eb27ce423bca)
+
 3) Lakukan perubahan terhadap password root.
 
    ![image](https://github.com/user-attachments/assets/f802c8d0-41e2-40af-b163-7c81f84a995a)
