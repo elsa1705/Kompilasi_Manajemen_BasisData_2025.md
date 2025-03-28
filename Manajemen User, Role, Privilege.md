@@ -60,6 +60,7 @@ MELIHAT HASIL :
 SHOW DATABASES;
 ```
  8. Pengujian sebelum dan sesudah user diberikan role.
+
 SEBELUM
 ```sql
 SHOW DATABASES;
