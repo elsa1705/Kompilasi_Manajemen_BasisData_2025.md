@@ -98,4 +98,4 @@ Konfigurasi
 
 ## 7. Sumber Referensi
 - [MySQL Documentation](https://dev.mysql.com/doc/)
-- [Panduan Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1E1SBJXj0sZxMpt6FOjliDfrdSAc26y47/view?usp=sharing)
+- [Panduan Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1zPGkg_up8ns5a2PEZ3jHtd24l1ewKEJN/view?usp=sharing)
