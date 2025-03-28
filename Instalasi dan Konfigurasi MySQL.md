@@ -55,9 +55,9 @@ Berikut langkah-langkah untuk menginstal dan mengonfigurasi MySQL secara optimal
 3. Verifikasi perubahan dengan login ulang.
 
 ### E. Membuat Database Baru
-1. Buat database dengan format `kelompok_nama_mhs`:
+1. Buat database dengan format `kelompok_AB_nama_mhs`:
    ```sql
-   CREATE DATABASE kelompok_09_elsa;
+   CREATE DATABASE kelompok_A1_elsa;
    ```
 2. Cek apakah database berhasil dibuat:
    ```sql
@@ -71,6 +71,29 @@ Pembahasan ini mencakup langkah-langkah instalasi dan konfigurasi MySQL untuk me
  instalasi dan konfigurasi MySQL yang tepat sangat penting untuk memastikan performa dan keamanan database. Dengan mengubah port default, mengatur password root, serta mengoptimalkan innodb_buffer_pool_size, MySQL dapat berjalan lebih efisien. Pengelolaan database melalui Command Prompt juga memberikan fleksibilitas dalam administrasi sistem.
 
 ## 6. Bukti Dukung Gambar
+Instalasi
+1) Jika instal telah selesai MySQL otomatis membuka lalu pilih saja server only dan klik next.
+   
+   ![image](https://github.com/user-attachments/assets/d5c3925d-7e10-4426-8b83-76adec3c3889)
+2) Lalu klik saja Execute untuk melanjutkan menginstall.
+
+   ![image](https://github.com/user-attachments/assets/edc4ffa8-9837-4e13-8282-cd925e335d5e)
+
+Konfigurasi
+
+1)	port dari default 3306 menjadi 3309
+   
+   ![1](https://github.com/user-attachments/assets/0e14f3dc-6278-4364-a231-db5118317f76)
+2)	innodb_buffer_pool_size dr default 16M (menjadi 25% dari RAM )
+
+   ![image](https://github.com/user-attachments/assets/145598d3-430e-4d8b-9968-eb27ce423bca)
+3) Lakukan perubahan terhadap password root.
+
+   ![image](https://github.com/user-attachments/assets/f802c8d0-41e2-40af-b163-7c81f84a995a)
+4. Buat database dengan nama: kelompok_AB_nama_mhs
+
+   ![image](https://github.com/user-attachments/assets/abebee92-394c-498d-8060-eb8253d9eb1b)
+
 ## 7. Sumber Referensi
 - [MySQL Documentation](https://dev.mysql.com/doc/)
 - [Panduan Praktikum Sistem Manajemen Basis Data](https://drive.google.com/file/d/1E1SBJXj0sZxMpt6FOjliDfrdSAc26y47/view?usp=sharing)
